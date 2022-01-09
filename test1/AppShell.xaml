@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:test1.Views"
+       Title="test1"
+       x:Class="test1.AppShell">
+
+    <!--
+        The overall app visual hierarchy is defined here, along with navigation.
+    
+        https://docs.microsoft.com/xamarin/xamarin-forms/app-fundamentals/shell/
+    -->
+
+    <Shell.Resources>
+        <ResourceDictionary>
+            <Style x:Key="BaseStyle" TargetType="Element">
+                <Setter Property="Shell.BackgroundColor" Value="#D7FBE8" />
+                <Setter Property="Shell.ForegroundColor" Value="Black" />
+                <Setter Property="Shell.TitleColor" Value="Black" />
+                <Setter Property="Shell.DisabledColor" Value="Gray" />
+                <Setter Property="Shell.UnselectedColor" Value="LightGray" />
+                <Setter Property="Shell.TabBarBackgroundColor" Value="#62D2A2" />
+                <Setter Property="Shell.TabBarForegroundColor" Value="Gray"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="Gray"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="Black"/>
+            </Style>
+            <Style TargetType="TabBar" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="FlyoutItem" BasedOn="{StaticResource BaseStyle}" />
+            <Style TargetType="Label">
+                <Setter Property="FontFamily" Value="Nun"/>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
+
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
+
+    <FlyoutItem Title="Упражнения">
+        <ShellContent Title="Тренировки"  Route="ExercisesList" ContentTemplate="{DataTemplate local:ExercisesList}"/>
+        <!--<ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />-->
+    </FlyoutItem>
+
+    <FlyoutItem Title="Аккаунт">
+        <ShellContent/>
+    </FlyoutItem>
+
+    <FlyoutItem Title="Выход">
+        <ShellContent Title="Login" ContentTemplate="{DataTemplate local:LoginPage}"/>
+    </FlyoutItem>
+
+
+    <TabBar>
+        <ShellContent Route="FullExercise" ContentTemplate="{DataTemplate local:FullExercise}" />
+    </TabBar>
+
+    
+
+    <TabBar>
+        <ShellContent Route="Calendar" ContentTemplate="{DataTemplate local:Calendar}" />
+    </TabBar>
+
+    <TabBar>
+        <ShellContent Route="Registration" ContentTemplate="{DataTemplate local:Registration}" />
+    </TabBar>
+    
+    <TabBar>
+        <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate local:LoginPage}" />
+    </TabBar>
+
+
+</Shell>
