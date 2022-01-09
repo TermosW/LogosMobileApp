@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="test1.Views.LoginPage"
+             Shell.NavBarIsVisible="False"
+             Shell.FlyoutBehavior="Disabled"
+             xmlns:local="clr-namespace:test1;assembly=test1"
+             >
+    <ContentPage.Content>
+        <Grid>
+            
+            <Image Source="{local:ImageResource test1.Icons.loginBack.jpg}" Opacity="1" Aspect="AspectFill"/>
+            <BoxView BackgroundColor="#9DF3C4" Opacity="0.3"/>
+            
+            <StackLayout BackgroundColor="Transparent" Orientation="Vertical" Padding="30" Spacing="25" Margin="0, 120, 0, 0" >
+                <Image Source="{local:ImageResource test1.Icons.logos.png}" Scale="2" Margin="0, 0, 0, 60"/>
+                <Frame BackgroundColor="#9DF3C4" HasShadow="False" CornerRadius="5">
+                    <StackLayout BackgroundColor="#9DF3C4" Orientation="Vertical" Spacing="10">
+                        <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Эл.почта"
+                           HeightRequest="40"
+                           Keyboard="Email"
+                           TextColor="Black"/>
+                        <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Пароль"
+                           HeightRequest="40"
+                           IsPassword="True"
+                           TextColor="Black"/>
+                    </StackLayout>
+                </Frame>
+                <Button Command="{Binding LoginCommand}" Text="Войти" TextColor="Black"  CornerRadius="5"
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand" FontFamily="Nun"
+                    BackgroundColor="#9DF3C4"/>
+                <Label Text="Нет аккаунта? Зарегистрируйтесь." HorizontalOptions="Center" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RegisterCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

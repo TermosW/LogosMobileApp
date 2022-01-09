@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test1.Views.FullExercise"
+             BackgroundColor="#D7FBE8"
+             Shell.FlyoutBehavior="Flyout"
+             xmlns:local="clr-namespace:test1;assembly=test1"
+             Title="{Binding Title}">
+   
+    
+    <ContentPage.Content>
+
+        <Frame BackgroundColor="#9DF3C4" Margin="15, 15, 15, 0" CornerRadius="15">
+            <StackLayout BackgroundColor="#9DF3C4">
+                <Label  Text="{Binding ExText}" FontSize="20" HorizontalTextAlignment="Center" />
+                <StackLayout BackgroundColor="#9DF3C4" Orientation="Horizontal" VerticalOptions="EndAndExpand" HorizontalOptions="Center" Margin="0,0,0,40" Spacing="30">
+                    <!--<StackLayout Orientation="Vertical" Opacity="1" BackgroundColor="#9DF3C4" VerticalOptions="Center" Margin="0, 35, 0, 0" Spacing="20">
+                        <Image Source="{local:ImageResource test1.Icons.arrow-circle-left.png}" HeightRequest="20" Scale="3"/>
+                        <Label Text="Упр1"></Label>
+                    </StackLayout>-->
+                    <Image Opacity="{Binding OpacityLeft}" IsEnabled="{Binding IsEnabledLeft}" Source="{local:ImageResource test1.Icons.arrow-circle-left.png}" HeightRequest="20" Scale="3">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command="{Binding ImageArrowLeftTapped}"
+                                NumberOfTapsRequired="1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <Frame CornerRadius="360" Padding="5" BackgroundColor="#1FAB89">
+                        <Frame CornerRadius="360" Padding="38, 30, 38, 30" BackgroundColor="#D7FBE8">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TimerCommand}"/>
+                            </Frame.GestureRecognizers>
+                            <Label Text="{Binding Time}" TextColor="#1FAB89" FontSize="60"/>
+                        </Frame>
+                    </Frame>
+                    <Image Opacity="{Binding OpacityRight}" IsEnabled="{Binding IsEnabledRight}" Source="{local:ImageResource test1.Icons.arrow-circle-right.png}" HeightRequest="20" Scale="3">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer
+                                Command ="{Binding ImageArrowRightTapped}"
+                                NumberOfTapsRequired="1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                    <!--<ImageButton Source="{local:ImageResource test1.Icons.arrow-circle-right.png}" HeightRequest="20" Scale="3" />-->
+                </StackLayout>
+                
+            </StackLayout>
+        </Frame>
+        
+    </ContentPage.Content>
+</ContentPage>

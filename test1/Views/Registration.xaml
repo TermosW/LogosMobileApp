@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test1.Views.Registration"
+             Shell.NavBarIsVisible="False"
+             Shell.FlyoutBehavior="Flyout"
+             xmlns:local="clr-namespace:test1;assembly=test1"
+             >
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="{local:ImageResource test1.Icons.loginBack.jpg}" Opacity="1" Aspect="AspectFill"/>
+            <BoxView BackgroundColor="#9DF3C4" Opacity="0.3"/>
+            <StackLayout BackgroundColor="Transparent" Orientation="Vertical" Padding="30" Spacing="25" Margin="0, 60, 0, 0" >
+                <Image Source="{local:ImageResource test1.Icons.logos.png}" Scale="2" Margin="0, 0, 0, 30"/>
+                <Frame BackgroundColor="#9DF3C4" HasShadow="False" CornerRadius="5">
+                    <StackLayout BackgroundColor="#9DF3C4" Orientation="Vertical" Spacing="10">
+                        <Entry x:Name="Email" Text="{Binding Email}" Placeholder="Эл.почта"
+                           HeightRequest="40"
+                           Keyboard="Email"
+                           TextColor="Black"/>
+                        <Entry x:Name="Name" Text="{Binding Name}" Placeholder="Ваше имя"
+                           HeightRequest="40"
+                           Keyboard="Text"
+                           TextColor="Black"/>
+                        <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Пароль"
+                           HeightRequest="40"
+                           IsPassword="True"
+                           TextColor="Black"/>
+                        <Entry x:Name="RepeatPassword" Text="{Binding RepeatPassword}" Placeholder="Повторите пароль"
+                           HeightRequest="40"
+                           IsPassword="True"
+                           TextColor="Black"/>
+                        <Picker Title="Выберите Ваш дефект" TextColor="Black" >
+                            <Picker.Items>
+                                <x:String>Ротацизм</x:String>
+                                <x:String>Сигматизм</x:String>
+                                <x:String>Хитизм</x:String>
+                                <x:String>Йотацизм</x:String>
+                                <x:String>Каппацизм</x:String>
+                                <x:String>Гаммацизм</x:String>
+                                <x:String>Ламбдацизм</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                </Frame>
+                <Button Command="{Binding AcceptRegCommand}" Text="Зарегистрироваться" TextColor="Black" CornerRadius="5" Padding="0, 15,0,15"
+                    FontAttributes="Bold" FontSize="Large" TextTransform="None" HorizontalOptions="FillAndExpand" FontFamily="Nun"
+                    BackgroundColor="#9DF3C4"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

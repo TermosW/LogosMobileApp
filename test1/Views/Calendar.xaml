@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test1.Views.Calendar"
+             BackgroundColor="#D7FBE8"
+             Shell.NavBarIsVisible="False"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!--<Label Text="Здавствуйте, Имя. &#10; Предлгаем Вам выполнить подборку упражнений на сегодня!" Margin="0, 100, 0, 100" FontSize="20" HorizontalTextAlignment="Center" />-->
+            <Label Text=" Январь 2022 " HorizontalOptions="Center" FontSize="30" Margin="0,200,0,20" FontAttributes="Italic,Bold"/>
+            <Grid VerticalOptions="Center" BackgroundColor="#1FAB89" Padding="0, 3, 0, 3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width ="0.19*"/>
+                    <ColumnDefinition Width ="0.19*"/>
+                    <ColumnDefinition Width ="0.19*"/>
+                    <ColumnDefinition Width ="0.19*"/>
+                    <ColumnDefinition Width ="0.19*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                </Grid.RowDefinitions>
+                <BoxView Grid.Column="0" BackgroundColor="#D7FBE8"/>
+                <Label Grid.Column="0" Text="6" FontSize="30" TextColor="Gray"  HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                <BoxView Grid.Column="1" BackgroundColor="#D7FBE8"/>
+                <Label Grid.Column="1" Text="7" FontSize="30" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                <BoxView Grid.Column="2" BackgroundColor="#D7FBE8"/>
+                <Label Grid.Column="2" Text="8" TextColor="Red" FontSize="30"  FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                <BoxView Grid.Column="3" BackgroundColor="#D7FBE8"/>
+                <Label Grid.Column="3" Text="9" FontSize="30" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+
+                <BoxView Grid.Column="4" BackgroundColor="#D7FBE8"/>
+                <Label Grid.Column="4" Text="10" FontSize="30" TextColor="Gray" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Grid>
+            <Button Text="Начать!" BackgroundColor="#1FAB89" Command="{Binding CalendarCommand}" FontSize="25" Margin="85, 100, 85, 0" CornerRadius="40" HeightRequest="70" FontAttributes="Bold" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="test1.Views.ExercisesList"
+             xmlns:vm="clr-namespace:test1.ViewModels"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem  Text="Начать    " Command="{Binding StartCommand}" />
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.BindingContext>
+        <vm:ExercisesListViewModel />
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Accent">#96d1ff</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView>
+        <StackLayout  BackgroundColor="#D7FBE8" Padding="16,16">
+
+            <Frame BackgroundColor="#9DF3C4" Padding="16,16" Margin="0,0,0,10" CornerRadius="20" >
+                <StackLayout BackgroundColor="#9DF3C4" >
+                    <Label x:Name="ex1Title"  HorizontalTextAlignment="Start" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+                    <StackLayout BackgroundColor="#9DF3C4" Orientation="Horizontal">
+                        <Label x:Name="ex1Text" HorizontalTextAlignment="Start" TextColor="Black" FontSize="14" FontFamily="Nun" WidthRequest="200"/>
+                        <Label x:Name="ex1Time"  HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalTextAlignment="End" TextColor="Black" FontSize="10"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="#9DF3C4" Padding="16,16" Margin="0,0,0,10" CornerRadius="20" >
+                <StackLayout BackgroundColor="#9DF3C4" >
+                    <Label x:Name="ex2Title" HorizontalTextAlignment="Start" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+                    <StackLayout BackgroundColor="#9DF3C4" Orientation="Horizontal" Spacing="0">
+                        <Label x:Name="ex2Text" HorizontalTextAlignment="Start" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="ex2Time"  HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalTextAlignment="End" TextColor="Black" FontSize="10"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="#9DF3C4" Padding="16,16" Margin="0,0,0,10" CornerRadius="20" >
+                <StackLayout BackgroundColor="#9DF3C4" >
+                    <Label x:Name="ex3Title" HorizontalTextAlignment="Start" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+                    <StackLayout BackgroundColor="#9DF3C4" Orientation="Horizontal">
+                        <Label x:Name="ex3Text" HorizontalTextAlignment="Start" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="ex3Time"  HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalTextAlignment="End" TextColor="Black" FontSize="10"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="#9DF3C4" Padding="16,16" Margin="0,0,0,10" CornerRadius="20" >
+                <StackLayout BackgroundColor="#9DF3C4" >
+                    <Label x:Name="ex4Title" HorizontalTextAlignment="Start" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+                    <StackLayout BackgroundColor="#9DF3C4" Orientation="Horizontal">
+                        <Label x:Name="ex4Text" HorizontalTextAlignment="Start" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="ex4Time"  HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalTextAlignment="End" TextColor="Black" FontSize="10"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            <Frame BackgroundColor="#9DF3C4" Padding="16,16" Margin="0,0,0,10" CornerRadius="20" >
+                <StackLayout BackgroundColor="#9DF3C4" >
+                    <Label x:Name="ex5Title" HorizontalTextAlignment="Start" TextColor="Black" FontSize="18" FontAttributes="Bold"/>
+                    <StackLayout BackgroundColor="#9DF3C4" Orientation="Horizontal">
+                        <Label x:Name="ex5Text" HorizontalTextAlignment="Start" TextColor="Black" FontSize="14"/>
+                        <Label x:Name="ex5Time"  HorizontalTextAlignment="End" HorizontalOptions="FillAndExpand" VerticalTextAlignment="End" TextColor="Black" FontSize="10"/>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
